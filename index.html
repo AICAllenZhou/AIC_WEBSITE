@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alexander Innovation Centre | Applied AI, Workforce Training, SME Adoption and AI Innovation in Vancouver</title>
+<meta name="description" content="Alexander Innovation Centre helps Canadian organizations build AI skills, adopt responsible AI workflows, commercialize applied AI ideas, and access trusted Canadian AI infrastructure." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="assets/colors_and_type.css" />
+<link rel="stylesheet" href="assets/site.css" />
+<script type="importmap">
+{ "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+} }
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":["Organization","LocalBusiness"],"name":"Alexander Innovation Centre","alternateName":"AIC","url":"https://alexic.ca","email":"hello@alexic.ca","description":"A British Columbia-based applied AI platform for workforce training, SME adoption, applied research, venture commercialization, ALEBEX AI, and Canadian AI infrastructure.","address":{"@type":"PostalAddress","streetAddress":"#101 - 570 Dunsmuir Street","addressLocality":"Vancouver","addressRegion":"BC","postalCode":"V6B 1Y1","addressCountry":"CA"},"areaServed":"CA"}
+</script>
+</head>
+<body>
+
+<div class="scrollbar" aria-hidden="true"><span class="scrollbar__fill" id="scrollFill"></span></div>
+
+<!-- ============================ FIXED BACKGROUND =========================== -->
+<div class="stage" aria-hidden="true">
+  <canvas class="stage__canvas" id="bgCanvas"></canvas>
+  <video class="stage__video" id="bgVideo" muted playsinline preload="auto" poster="assets/video-poster.jpg"></video>
+  <img class="stage__orbits" id="orbits" src="assets/hero-atom-orbits.png" alt="" data-parallax="-0.18" />
+  <div class="stage__scrim"></div>
+  <div class="stage__grain"></div>
+</div>
+
+<!-- ================================ NAV ==================================== -->
+<header class="nav" id="nav">
+  <a class="nav__brand" href="#top" aria-label="Alexander Innovation Centre, home">
+    <img src="assets/aic-logo-white.png" alt="Alexander Innovation Centre" />
+  </a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="divisions.html">Core Areas</a>
+    <a href="programs.html">Services</a>
+    <a href="alebex-ai.html">ALEBEX AI</a>
+    <a href="innovation-night.html">Innovation Nights</a>
+  </nav>
+  <a class="btn btn--solid nav__cta" href="contact.html" style="padding:.5rem 1.1rem">Contact</a>
+</header>
+
+<main id="top">
+
+  <!-- =============================== HERO ================================== -->
+  <section class="sec sec--hero" id="hero">
+    <div class="wrap hero__wrap">
+      <img class="hero__logo reveal" src="assets/aic-logo-white.png" alt="Alexander Innovation Centre" />
+      <h1 class="hero__title reveal">
+        Applied AI for <span class="accent">workforce</span>,<br />business adoption, and<br />Canadian innovation.
+      </h1>
+      <p class="hero__sub reveal body-lg">
+        Alexander Innovation Centre helps Canadian organizations move from AI curiosity to measurable impact.
+        We train teams, support SME adoption, develop applied AI solutions, incubate ventures, and build
+        trusted Canadian AI infrastructure, from downtown Vancouver.
+      </p>
+      <div class="hero__cta reveal">
+        <a class="btn btn--primary" href="contact.html">Book an AI Consultation <span class="btn__arrow">→</span></a>
+        <a class="btn btn--ghost" href="divisions.html">Explore Core Areas</a>
+      </div>
+    </div>
+    <div class="wrap hero__meta">
+      <span>© 2026 Alexander Innovation Centre</span>
+      <span class="hero__right">
+        <a href="https://alexic.ca">alexic.ca</a>
+        <a href="innovation-night.html">Innovation Nights</a>
+        <a href="contact.html">Contact</a>
+      </span>
+    </div>
+  </section>
+
+  <!-- =========================== SUMMARY STRIP ============================= -->
+  <section class="sec sec--strip" id="strip">
+    <div class="wrap">
+      <div class="strip">
+        <article class="strip__col reveal">
+          <span class="strip__no mono">Train</span>
+          <h3>AI Workforce &amp; SME Adoption</h3>
+          <p>Assess readiness, train teams, implement responsible AI workflows, and measure impact.</p>
+        </article>
+        <article class="strip__col reveal">
+          <span class="strip__no mono">Research</span>
+          <h3>Applied AI Research &amp; Innovation</h3>
+          <p>Practical pilots and prototypes with real-world partners, built for deployment.</p>
+        </article>
+        <article class="strip__col reveal">
+          <span class="strip__no mono">Incubate</span>
+          <h3>AI Venture Incubation</h3>
+          <p>From applied idea to validated pilot, product, and market-ready Canadian AI venture.</p>
+        </article>
+        <article class="strip__col reveal">
+          <span class="strip__no mono">Build</span>
+          <h3>Canadian AI Infrastructure</h3>
+          <p>Staged Canadian-hosted capacity for trusted testing, deployment, and partner support.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== ABOUT ================================== -->
+  <section class="sec sec--about" id="about">
+    <div class="wrap panel">
+      <p class="kicker"><span class="seq mono">01</span> About AIC</p>
+      <h2 class="display-lg reveal">Building the bridge between AI ideas and real-world adoption.</h2>
+      <div class="about__grid">
+        <div class="reveal">
+          <p class="body-lg">
+            British Columbia has AI talent, ambitious organizations, and growing market demand. Alexander
+            Innovation Centre exists to close the gap between AI possibility and practical deployment.
+          </p>
+          <p>
+            AIC is a British Columbia-based applied AI platform connecting workforce training, SME adoption,
+            applied research, venture incubation, commercialization, and Canadian-hosted infrastructure, so
+            people and organizations can use AI responsibly, confidently, and productively.
+          </p>
+        </div>
+        <div class="about__cards">
+          <div class="minicard reveal">
+            <span class="overline">Our Mission</span>
+            <p>To help Canadian organizations turn AI ideas into trusted, measurable, and scalable real-world outcomes.</p>
+          </div>
+          <div class="minicard reveal">
+            <span class="overline">What we do</span>
+            <p>Build AI workforce skills · support SME adoption · conduct applied research · incubate and
+               commercialize ventures · develop trusted Canadian AI infrastructure.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== OPEN BAND, video breathes ===================== -->
+  <section class="sec sec--quote" id="quote">
+    <div class="wrap">
+      <p class="quote__big reveal" data-parallax="0.08">
+        From AI curiosity to <span class="accent">measurable impact</span>.<br />Practical, responsible, and Canadian.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================= DIVISIONS =============================== -->
+  <section class="sec sec--platform" id="platform">
+    <div class="wrap">
+      <p class="kicker"><span class="seq mono">02</span> How AIC Works</p>
+      <h2 class="display-lg reveal">One operating model, from idea to deployment.</h2>
+      <p class="lead reveal">We take talent and real problems from across BC's economy and move them through one
+        disciplined engine into deployed, measurable outcomes.</p>
+      <div class="opmap reveal">
+        <div class="opmap__side opmap__side--in">
+          <span class="opmap__cap">Inputs</span>
+          <ul class="opmap__list">
+            <li>SMEs &amp; employers</li><li>Founders</li><li>Researchers</li><li>Students</li>
+          </ul>
+        </div>
+        <span class="opmap__arrow" aria-hidden="true"></span>
+        <div class="opmap__engine">
+          <span class="opmap__cap">AIC Engine</span>
+          <ol class="opmap__pipe">
+            <li>Assess</li><li>Train</li><li>Build</li><li>Deploy</li><li>Measure</li>
+            <span class="opmap__run" aria-hidden="true"></span>
+          </ol>
+        </div>
+        <span class="opmap__arrow" aria-hidden="true"></span>
+        <div class="opmap__side opmap__side--out">
+          <span class="opmap__cap">Outputs</span>
+          <ul class="opmap__list">
+            <li>Trained teams</li><li>Deployed AI workflows</li><li>Validated pilots</li><li>Commercialized ventures</li><li>ALEBEX workflows &amp; partnerships</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap divwrap">
+      <h2 class="display-md reveal">Four core areas, one platform.</h2>
+      <p class="lead reveal">Each core area turns those inputs into a specific outcome. Explore each in depth.</p>
+      <div class="divgrid reveal">
+        <a class="divcard" href="ai-workforce-sme-adoption.html" style="--c:#22B8FF">
+          <span class="divcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h5M7 13h5M7 17h3"/><path d="M15.5 8.5l1.6 1.6 2.4-2.6"/></svg></span>
+          <span class="divcard__no mono">01 · For SMEs &amp; employers</span>
+          <h3>AI Workforce &amp; SME Adoption</h3>
+          <figure class="divcard__media"><img src="assets/division-workforce-adoption.webp" alt="" loading="lazy" /></figure>
+          <p>Assess → Train → Implement → Measure → Optimize.</p>
+          <span class="divcard__out">You get: trained teams &amp; deployed workflows →</span>
+        </a>
+        <a class="divcard" href="applied-research.html" style="--c:#19C7C0">
+          <span class="divcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v5.5L5.4 16.6A2 2 0 0 0 7.1 20h9.8a2 2 0 0 0 1.7-3.4L14 8.5V3"/><path d="M8 15h8"/></svg></span>
+          <span class="divcard__no mono">02 · Research</span>
+          <h3>Applied AI Research &amp; Innovation</h3>
+          <figure class="divcard__media"><img src="assets/division-applied-research.webp" alt="" loading="lazy" /></figure>
+          <p>Partner problem → prototype → validated pilot.</p>
+          <span class="divcard__out">You get: validated pilots &amp; deployable solutions →</span>
+        </a>
+        <a class="divcard" href="incubation.html" style="--c:#FF8A3D">
+          <span class="divcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 1.6 5 5 5 9 0 2-1 4-1 4H8s-1-2-1-4c0-4 2-7.4 5-9z"/><circle cx="12" cy="9" r="1.7"/><path d="M8 16l-2 5 3.2-2M16 16l2 5-3.2-2"/></svg></span>
+          <span class="divcard__no mono">03 · Commercialization</span>
+          <h3>AI Venture Incubation &amp; Commercialization</h3>
+          <figure class="divcard__media"><img src="assets/division-venture-incubation.webp" alt="" loading="lazy" /></figure>
+          <p>Founder → MVP → pilot customer → commercialization.</p>
+          <span class="divcard__out">You get: market-ready Canadian AI ventures →</span>
+        </a>
+        <a class="divcard" href="data-centre.html" style="--c:#4FC6FF">
+          <span class="divcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="6" rx="1.5"/><rect x="4" y="14" width="16" height="6" rx="1.5"/><path d="M7.5 7h.01M7.5 17h.01"/><path d="M14 7h3M14 17h3"/></svg></span>
+          <span class="divcard__no mono">04 · Infrastructure</span>
+          <h3>Canadian AI Infrastructure &amp; Data Centre</h3>
+          <figure class="divcard__media"><img src="assets/division-ai-infrastructure.webp" alt="" loading="lazy" /></figure>
+          <p>Canadian-hosted testing &amp; deployment environment.</p>
+          <span class="divcard__out">You get: trusted, sovereign deployment →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= FLAGSHIP, ALEBEX AI ======================= -->
+  <section class="sec sec--flagship" id="alebex">
+    <div class="wrap">
+      <p class="kicker"><span class="kicker__dot"></span>Flagship · Canadian agentic workflow &amp; voice AI</p>
+    </div>
+    <div class="pillar-feature reveal">
+      <div class="pillar-feature__text floorpanel__card">
+        <span class="floorpanel__no mono">ALEBEX AI</span>
+        <h3>We don't just support innovation. <span class="accent">We build it.</span></h3>
+        <p><strong>ALEBEX AI</strong> is AIC's flagship Canadian agentic workflow and voice-AI platform, helping organizations respond faster, follow up consistently, and deliver better service, responsibly.</p>
+        <p class="floor__tag">Voice calls, follow-up, routing, and admin workflows, built in Canada.</p>
+        <a class="btn btn--primary feature__cta" href="alebex-ai.html">Discover ALEBEX AI <span class="btn__arrow">→</span></a>
+      </div>
+      <div class="pillar-feature__orb">
+        <div class="orb3d" id="alebexOrb">
+          <canvas id="alebexCanvas"></canvas>
+          <a class="orb3d__link" href="https://alebex.ai/" target="_blank" rel="noopener" aria-label="Book an ALEBEX AI demo"></a>
+          <span class="orb3d__tag">ALEBEX · Agentic AI</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== INNOVATION NIGHTS TEASER ====================== -->
+  <section class="sec sec--flagship" id="innovation">
+    <div class="wrap">
+      <p class="kicker"><span class="kicker__dot"></span>Public AI Literacy &amp; Ecosystem Platform</p>
+    </div>
+    <div class="pillar-feature reveal">
+      <div class="pillar-feature__text floorpanel__card">
+        <span class="floorpanel__no mono">Innovation Nights</span>
+        <h3>Where Vancouver's AI builders connect.</h3>
+        <p>A recurring forum for founders, employers, researchers, students, and investors, connecting AI
+           skills, agentic workflows, SME adoption, responsible AI, ventures, education AI, and Canadian
+           infrastructure. Next: <strong>Agentic Workflows in Action, June 23, 2026.</strong></p>
+        <p class="floor__tag">Free, open, and downtown.</p>
+        <a class="floorpanel__link" href="innovation-night.html">See Innovation Nights →</a>
+      </div>
+      <div class="pillar-feature__orb">
+        <div class="eventcard">
+          <span class="eventcard__tag mono">Next Innovation Night</span>
+          <a class="eventcard__poster" href="https://luma.com/eu31fbfu" target="_blank" rel="noopener">
+            <img src="assets/events/upcoming-june-23.png" alt="AI Innovation Night: Corporate Agentic AI Series, June 23, 2026, 570 Dunsmuir St." />
+          </a>
+          <ul class="eventcard__topics">
+            <li>AI agents</li><li>Employee productivity</li><li>Live demos</li><li>Startup building</li><li>Networking</li>
+          </ul>
+          <div class="eventcard__foot">
+            <span class="eventcard__people">Founders · Employers · Researchers · Students · Investors</span>
+            <a class="floorpanel__link" href="https://luma.com/eu31fbfu" target="_blank" rel="noopener">Join the next Innovation Night →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== FINAL CTA ============================= -->
+  <section class="sec sec--final" id="cta">
+    <div class="wrap">
+      <div class="finalcard reveal">
+        <p class="kicker"><span class="kicker__dot"></span>Get Involved</p>
+        <h2 class="display-md">Build practical AI with AIC.</h2>
+        <p>Whether you're exploring AI adoption, looking for applied research, building a venture, or developing
+           future-ready talent, AIC is built to help ideas become real.</p>
+        <div class="row">
+          <a class="btn btn--primary btn--lg" href="contact.html">Contact us <span class="btn__arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== FAQ (AEO) ============================= -->
+  <section class="sec sec--faq" id="faq">
+    <div class="wrap panel">
+      <p class="kicker"><span class="seq mono">04</span> Quick Answers</p>
+      <h2 class="display-md reveal">Frequently asked questions.</h2>
+      <div class="faq reveal">
+        <details open><summary>What is Alexander Innovation Centre?</summary><p>A Vancouver-based applied AI platform that supports AI workforce training, SME adoption, applied AI research, venture incubation, commercialization, and trusted Canadian AI infrastructure development.</p></details>
+        <details><summary>Who does AIC serve?</summary><p>Canadian SMEs, employers, founders, research partners, education organizations, and institutions that want practical AI training, implementation, innovation support, and trusted deployment pathways.</p></details>
+        <details><summary>What is the AI Workforce &amp; SME Adoption core area?</summary><p>It helps employers and SMEs assess AI readiness, train staff, implement responsible AI workflows, measure impact, and plan ongoing optimization.</p></details>
+        <details><summary>What corporate AI training does AIC offer?</summary><p>Executive strategy sprints, AI fundamentals, productivity skills, responsible AI &amp; governance, role-based agent labs, manager and workflow redesign, and AI champion train-the-trainer.</p></details>
+        <details><summary>Does AIC help SMEs access grants?</summary><p>AIC can help employers understand possible funding pathways and prepare training documentation. Employers apply directly to many government programs, and funding is not guaranteed.</p></details>
+        <details><summary>What is an AI readiness assessment?</summary><p>It reviews whether an organization has the people, workflows, data, tools, governance, and leadership capacity needed to adopt AI responsibly.</p></details>
+        <details><summary>What is responsible AI governance?</summary><p>The set of policies, processes, controls, and practices that help an organization use AI safely, transparently, fairly, and accountably.</p></details>
+        <details><summary>What is ALEBEX AI?</summary><p>ALEBEX AI is AIC's flagship Canadian agentic workflow and voice-AI platform for service, communication, follow-up, routing, and administrative automation.</p></details>
+        <details><summary>What are Innovation Nights?</summary><p>AIC's public AI literacy and ecosystem-building event series, connecting Vancouver's founders, employers, researchers, students, and investors around practical applied AI.</p></details>
+        <details><summary>Is AIC building Canadian AI infrastructure?</summary><p>AIC is developing staged Canadian-hosted AI infrastructure and data centre capacity to support applied research, ALEBEX AI, incubated ventures, and selected partner projects.</p></details>
+        <details><summary>How can a business work with AIC?</summary><p>Contact AIC through the website and select your inquiry type. We route requests to the right core area or service and follow up.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== FOOTER ================================ -->
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <img class="footer__logo" src="assets/aic-logo-white.png" alt="Alexander Innovation Centre" />
+      <p class="footer__tag">Innovation. Education. Industry. Impact.</p>
+      <p class="footer__meta caption">
+        Alexander Innovation Centre · #101 - 570 Dunsmuir Street, Vancouver, BC V6B 1Y1 ·
+        <a href="https://alexic.ca">alexic.ca</a> · hello@alexic.ca
+      </p>
+    </div>
+  </footer>
+
+</main>
+
+<script src="assets/scroll.js"></script>
+<script type="module" src="assets/alebex-orb.js"></script>
+<script src="assets/nav.js"></script>
+</body>
+</html>

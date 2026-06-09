@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+**/.DS_Store
+.thumbnail
+
+# Claude Code
+.claude/
+
+# Editor / OS cruft
+*.swp
+*~
+Thumbs.db

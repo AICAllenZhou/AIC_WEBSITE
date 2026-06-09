@@ -1,0 +1,218 @@
+/* ==========================================================================
+   Alexander Innovation Centre — Colors & Type
+   Source of truth for all design tokens. Used across ui_kits/, slides/,
+   and preview/ cards. Derived from alexic.ca, the AIC logo, and the
+   brand imagery supplied by the team.
+   ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+:root {
+  /* -- BRAND COLORS --------------------------------------------------------
+     The logo lives on a deep navy field. Headlines on alexic.ca mix a crisp
+     white with a single accent-blue highlight ("innovations"). The orbit
+     artwork introduces a red/amber glow as a secondary accent used sparingly
+     for emphasis, energy, and "live" moments (events, data readouts).       */
+
+  --aic-navy-900:        #0A1A3A;   /* deepest background, hero wells */
+  --aic-navy-800:        #0F2450;   /* logo field, primary bg */
+  --aic-navy-700:        #13305F;   /* elevated surfaces, cards on dark */
+  --aic-navy-600:        #1B3C75;   /* hover for dark surfaces */
+  --aic-navy-500:        #27508E;   /* borders on dark */
+  --aic-navy-300:        #6C89B8;   /* muted text on dark */
+  --aic-navy-100:        #D9E2F3;   /* very soft tints for light mode */
+
+  --aic-blue-500:        #1FA6FF;   /* primary accent ("innovations") */
+  --aic-blue-400:        #4FBDFF;   /* hover/lighter accent */
+  --aic-blue-300:        #87D2FF;   /* highlights on data viz */
+  --aic-blue-600:        #0B7DD1;   /* pressed / strong link */
+
+  --aic-ember-500:       #E63946;   /* secondary accent — energy, live */
+  --aic-ember-400:       #FF5A66;   /* hover for ember */
+  --aic-ember-600:       #B5222D;   /* pressed ember */
+
+  /* -- NEUTRAL SCALE (light surfaces) ------------------------------------- */
+  --aic-white:           #FFFFFF;
+  --aic-paper:           #F7F9FC;   /* light page bg */
+  --aic-fog-100:         #EDF1F7;
+  --aic-fog-200:         #DCE3EE;
+  --aic-fog-300:         #BFCADC;
+  --aic-slate-500:       #5A6A82;
+  --aic-slate-700:       #2E3A52;
+  --aic-ink:             #0E1626;   /* body text on light */
+
+  /* -- SEMANTIC TOKENS ----------------------------------------------------
+     Two surface modes: dark (hero/marketing default, matches alexic.ca) and
+     light (long-form content, docs, app shells). Components should reference
+     these, not the raw palette.                                              */
+
+  /* default = DARK (matches public site hero) */
+  --fg-1:                var(--aic-white);
+  --fg-2:                #C7D2E8;        /* secondary text on navy */
+  --fg-3:                var(--aic-navy-300);
+  --fg-accent:           var(--aic-blue-500);
+  --fg-ember:            var(--aic-ember-500);
+
+  --bg-1:                var(--aic-navy-800);
+  --bg-2:                var(--aic-navy-700);
+  --bg-3:                var(--aic-navy-600);
+  --bg-well:             var(--aic-navy-900);
+
+  --border-1:            rgba(255,255,255,0.10);
+  --border-2:            rgba(255,255,255,0.18);
+  --border-strong:       var(--aic-blue-500);
+
+  --link:                var(--aic-blue-400);
+  --link-hover:          var(--aic-blue-300);
+
+  --success:             #2FB47C;
+  --warning:             #F4B740;
+  --danger:              var(--aic-ember-500);
+  --info:                var(--aic-blue-500);
+
+  /* -- TYPOGRAPHY ----------------------------------------------------------
+     Sora is the closest free match to the confident, geometric sans used on
+     alexic.ca for headlines (SUBSTITUTION — original likely a paid family
+     such as Satoshi/General Sans; flag for the brand team).
+     Inter for running body copy, JetBrains Mono for data/code.             */
+
+  --font-display:        "Sora", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body:           "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono:           "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* Type scale — tuned for a landing-page-first system.
+     Display sizes use tight tracking & heavy weight; body stays relaxed.     */
+  --size-display-xl:     clamp(3.5rem, 6vw, 5.5rem);   /* hero H1 */
+  --size-display-lg:     clamp(2.75rem, 4.5vw, 4rem);  /* section intro */
+  --size-display-md:     clamp(2rem, 3vw, 2.75rem);    /* card titles */
+  --size-h1:             2.25rem;
+  --size-h2:             1.75rem;
+  --size-h3:             1.375rem;
+  --size-h4:             1.125rem;
+  --size-body-lg:        1.125rem;
+  --size-body:           1rem;
+  --size-body-sm:        0.9375rem;
+  --size-caption:        0.8125rem;
+  --size-overline:       0.75rem;
+
+  --weight-regular:      400;
+  --weight-medium:       500;
+  --weight-semibold:     600;
+  --weight-bold:         700;
+  --weight-black:        800;
+
+  --lh-tight:            1.05;
+  --lh-snug:             1.2;
+  --lh-normal:           1.5;
+  --lh-loose:            1.7;
+
+  --track-tight:         -0.02em;   /* for display sizes */
+  --track-snug:          -0.01em;
+  --track-normal:        0;
+  --track-wide:          0.08em;    /* overlines, section kickers */
+
+  /* -- SPACING, RADII, SHADOW --------------------------------------------- */
+  --space-1:             4px;
+  --space-2:             8px;
+  --space-3:             12px;
+  --space-4:             16px;
+  --space-5:             24px;
+  --space-6:             32px;
+  --space-7:             48px;
+  --space-8:             64px;
+  --space-9:             96px;
+  --space-10:            128px;
+
+  --radius-sm:           6px;
+  --radius-md:           10px;
+  --radius-lg:           16px;
+  --radius-xl:           24px;
+  --radius-pill:         999px;
+
+  /* Shadows are used SPARINGLY on dark surfaces — prefer borders + subtle
+     inner highlights. Light-mode uses soft layered ambient shadows.          */
+  --shadow-sm:           0 1px 2px rgba(10,26,58,0.08);
+  --shadow-md:           0 4px 16px rgba(10,26,58,0.10), 0 1px 2px rgba(10,26,58,0.06);
+  --shadow-lg:           0 18px 48px rgba(10,26,58,0.18), 0 4px 10px rgba(10,26,58,0.08);
+  --shadow-glow-blue:    0 0 0 1px rgba(31,166,255,0.5), 0 0 24px rgba(31,166,255,0.35);
+  --shadow-glow-ember:   0 0 0 1px rgba(230,57,70,0.5), 0 0 24px rgba(230,57,70,0.30);
+  --inset-highlight:     inset 0 1px 0 rgba(255,255,255,0.06);
+
+  /* -- MOTION ------------------------------------------------------------- */
+  --ease-standard:       cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-out:            cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:             cubic-bezier(0.4, 0, 1, 1);
+  --dur-fast:            120ms;
+  --dur-base:            200ms;
+  --dur-slow:            400ms;
+}
+
+/* =============================== LIGHT MODE =============================== */
+[data-theme="light"] {
+  --fg-1:                var(--aic-ink);
+  --fg-2:                var(--aic-slate-700);
+  --fg-3:                var(--aic-slate-500);
+  --fg-accent:           var(--aic-blue-600);
+  --fg-ember:            var(--aic-ember-500);
+
+  --bg-1:                var(--aic-paper);
+  --bg-2:                var(--aic-white);
+  --bg-3:                var(--aic-fog-100);
+  --bg-well:             var(--aic-fog-200);
+
+  --border-1:            var(--aic-fog-200);
+  --border-2:            var(--aic-fog-300);
+  --border-strong:       var(--aic-navy-800);
+
+  --link:                var(--aic-blue-600);
+  --link-hover:          var(--aic-navy-800);
+}
+
+/* =============================== BASE TYPE ================================ */
+html { font-family: var(--font-body); color: var(--fg-1); background: var(--bg-1); }
+body { font-size: var(--size-body); line-height: var(--lh-normal); -webkit-font-smoothing: antialiased; }
+
+h1, h2, h3, h4, h5, h6, .display {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--track-snug);
+  color: var(--fg-1);
+  margin: 0;
+}
+
+.display-xl { font-size: var(--size-display-xl); font-weight: var(--weight-black); line-height: var(--lh-tight); letter-spacing: var(--track-tight); }
+.display-lg { font-size: var(--size-display-lg); font-weight: var(--weight-bold);  line-height: var(--lh-tight); letter-spacing: var(--track-tight); }
+.display-md { font-size: var(--size-display-md); font-weight: var(--weight-bold);  line-height: var(--lh-snug);  letter-spacing: var(--track-snug); }
+
+h1 { font-size: var(--size-h1); }
+h2 { font-size: var(--size-h2); }
+h3 { font-size: var(--size-h3); }
+h4 { font-size: var(--size-h4); font-weight: var(--weight-semibold); }
+
+p, .body { font-size: var(--size-body); line-height: var(--lh-normal); color: var(--fg-2); margin: 0; }
+.body-lg  { font-size: var(--size-body-lg); line-height: var(--lh-loose); }
+.body-sm  { font-size: var(--size-body-sm); }
+.caption  { font-size: var(--size-caption); color: var(--fg-3); }
+
+.overline,
+.kicker {
+  font-size: var(--size-overline);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--track-wide);
+  text-transform: uppercase;
+  color: var(--fg-accent);
+}
+
+code, pre, .mono {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+a { color: var(--link); text-decoration: none; transition: color var(--dur-base) var(--ease-standard); }
+a:hover { color: var(--link-hover); }
+
+/* Accent highlight — the alexic.ca treatment where a single word in a
+   headline is painted in accent-blue. Apply as <span class="accent">…</span> */
+.accent       { color: var(--fg-accent); }
+.accent-ember { color: var(--fg-ember); }

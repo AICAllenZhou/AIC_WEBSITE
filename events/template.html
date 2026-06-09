@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!-- ===========================================================================
+     Innovation Nights, event/recap post template.
+     To add a post: copy this file to /events/YYYY-MM-DD-slug.html, fill in the
+     [PLACEHOLDERS], drop a cover image in /assets/events/, then add a matching
+     card to the grid in /innovation-night.html.
+     Note: this page lives in /events/, so all asset paths use ../
+     =========================================================================== -->
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>[POST TITLE] | Innovation Nights, Alexander Innovation Centre</title>
+<meta name="description" content="[ONE-LINE SUMMARY OF THE EVENT / RECAP]" />
+<link rel="stylesheet" href="../assets/colors_and_type.css" />
+<link rel="stylesheet" href="../assets/page.css" />
+</head>
+<body style="--accent:#FF8A3D; --accent-soft:rgba(255,138,61,0.16);">
+
+<header class="pnav">
+  <a class="pnav__brand" href="../index.html" aria-label="AIC home"><img src="../assets/aic-logo-white.png" alt="Alexander Innovation Centre" /></a>
+  <nav class="pnav__tabs" aria-label="Primary">
+    <a href="../divisions.html">Core Areas</a>
+    <a href="../programs.html">Services</a>
+    <a href="../alebex-ai.html">ALEBEX AI</a>
+    <a href="../innovation-night.html" class="is-active" aria-current="page">Innovation Nights</a>
+  </nav>
+  <a class="btn btn--solid" href="../contact.html" style="padding:.5rem 1.1rem">Contact</a>
+</header>
+
+<main>
+  <article class="wrap page-header--compact" style="max-width:820px;">
+    <a class="post__more" href="../innovation-night.html" style="display:inline-block;margin-bottom:1rem;">← All Innovation Nights</a>
+    <p class="pkicker"><span class="dot"></span>Recap · [MONTH DAY, YEAR]</p>
+    <h1 style="font-size:var(--size-display-md); line-height:1.08;">[POST TITLE]</h1>
+
+    <figure style="margin:1.8rem 0;">
+      <img src="../assets/events/[COVER-IMAGE].jpg" alt="[ALT TEXT]"
+           style="width:100%;border-radius:var(--radius-lg);border:1px solid var(--border-1);" />
+    </figure>
+
+    <p class="plead">[OPENING PARAGRAPH, what the event was about and who attended.]</p>
+    <p style="margin-top:1rem;color:var(--fg-2);">[BODY, talks, demos, takeaways. Keep it short; full photos/threads live on LinkedIn.]</p>
+
+    <ul class="pticks" style="margin-top:1.4rem;">
+      <li>[Highlight or takeaway 1]</li>
+      <li>[Highlight or takeaway 2]</li>
+      <li>[Highlight or takeaway 3]</li>
+    </ul>
+
+    <div style="margin-top:2rem;display:flex;gap:0.8rem;flex-wrap:wrap;">
+      <a class="btn btn--primary linkedin-btn" href="https://www.linkedin.com/company/alexinnovationc/posts/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.76V21h-4v-5.3c0-1.26-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8V21h-4z"/></svg>
+        See photos &amp; thread on LinkedIn
+      </a>
+      <a class="btn btn--ghost" href="https://luma.com/eu31fbfu" target="_blank" rel="noopener">Join the next event</a>
+    </div>
+  </article>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <img class="footer__logo" src="../assets/aic-logo-white.png" alt="Alexander Innovation Centre" />
+    <p class="footer__tag">Innovation. Education. Industry. Impact.</p>
+    <p class="footer__meta">Alexander Innovation Centre · #101 - 570 Dunsmuir Street, Vancouver, BC V6B 1Y1 · <a href="https://alexic.ca">alexic.ca</a> · hello@alexic.ca</p>
+  </div>
+</footer>
+
+<script src="../assets/nav.js"></script>
+</body>
+</html>
