@@ -22,13 +22,16 @@ process maps, so visitors *see* what AIC does instead of reading it.
 
 ## Deliverables
 
-| Map id | Page | Flow | Icons |
-|---|---|---|---|
-| `workforce-pathway` | ai-workforce-sme-adoption.html | Assess → Train → Implement → Measure → Optimize | target, notebook, setting, chart, rocket |
-| `aic-engine` | index.html (How AIC Works) | Assess → Train → Build → Deploy → Measure | target, notebook, tools, rocket, chart |
-| `research-pathway` | applied-research.html | Define → Prototype → Validate → Pathway | bulb, tools, shield, map-pin |
-| `venture-pathway` | incubation.html | Validate → Shape → Pilot → Prepare | target, setting, rocket, trophy |
-| `infra-pathway` | data-centre.html | Host → Test → Scale | computer, shield, chart |
+Each section gets a **bespoke structure** that matches its content (user
+feedback: don't repeat one identical linear template everywhere). The homepage
+keeps its existing `opmap` inputs→engine→outputs component (user likes it).
+
+| Map id | Page | Layout | Flow | Icons |
+|---|---|---|---|---|
+| `workforce-pathway` | ai-workforce-sme-adoption.html | linear zigzag | Assess → Train → Implement → Measure → Optimize | target, notebook, setting, chart, rocket |
+| `research-pathway` | applied-research.html | **branch** (path forks) | Define → Prototype → Validate → { Pilot \| Commercialize } | bulb, tools, shield, rocket, money-bag |
+| `venture-pathway` | incubation.html | **ascend** (rising staircase) | Validate → Shape → Pilot → Prepare | target, setting, rocket, trophy |
+| `infra-pathway` | data-centre.html | **stack** (layered tower) | Host → Test → Scale | computer, shield, chart |
 
 Each map ships in two layouts: horizontal (default) and vertical (`-v` suffix)
 for screens < 640px, swapped via CSS in a `.isopanel` dark rounded panel.
