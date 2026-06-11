@@ -23,11 +23,11 @@ process maps, so visitors *see* what AIC does instead of reading it.
 ## Deliverables
 
 Each section gets a **bespoke structure** that matches its content (user
-feedback: don't repeat one identical linear template everywhere). The homepage
-keeps its existing `opmap` inputs→engine→outputs component (user likes it).
+feedback: don't repeat one identical linear template everywhere).
 
 | Map id | Page | Layout | Flow | Icons |
 |---|---|---|---|---|
+| `aic-engine` | index.html (How AIC Works) | **engine** (converge → engine → diverge) | inputs (suitcase=SMEs, bulb=founders, lab=researchers, notebook=students) → gear engine (assess·train·build·deploy·measure) → outputs (tick, rocket, shield, money-bag) | see flow |
 | `workforce-pathway` | ai-workforce-sme-adoption.html | linear zigzag | Assess → Train → Implement → Measure → Optimize | target, notebook, setting, chart, rocket |
 | `research-pathway` | applied-research.html | **branch** (path forks) | Define → Prototype → Validate → { Pilot \| Commercialize } | bulb, tools, shield, rocket, money-bag |
 | `venture-pathway` | incubation.html | **ascend** (rising staircase) | Validate → Shape → Pilot → Prepare | target, setting, rocket, trophy |
@@ -62,3 +62,13 @@ for screens < 640px, swapped via CSS in a `.isopanel` dark rounded panel.
 
 3dicons is CC0-1.0 (no attribution required). Isoflow icons (MIT) remain in
 `tools/iso-icons/` as unused fallbacks.
+
+## Homepage extras (2026-06-11, same session)
+
+- Right-edge **section rail** (`.secrail`, `assets/rail.js`): glass scrollspy
+  with fibre-optic progress thread, glowing active dot with sonar ping, labels
+  slide out on hover/active. Appears after scrolling past ~45% of the hero;
+  hidden under 1100px and for reduced-motion users.
+- Icon semantics rule: icons must literally match the concept (user: SME =
+  business object, not a shopping bag). Santa-hat trap: 3dicons "cap" is a
+  Christmas hat, not a graduation cap.
