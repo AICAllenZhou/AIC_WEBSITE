@@ -19,34 +19,48 @@ Opening `index.html` directly also works for most pages.
 
 ## Structure
 
+Pages live at the repository root so production URLs match their canonical paths
+(`https://alexic.ca/<page>.html`). Shared assets are grouped by type under `assets/`.
+
 ```
 index.html                       Home (scroll-scrubbed video hero, operating model, ALEBEX orb)
-divisions.html                   Core Areas (capabilities)
-programs.html                    Services (actions)
+divisions.html                   Core Areas overview
+  applied-research.html          · Innovation Lab
+  ai-workforce-sme-adoption.html · Workforce Academy
+  incubation.html                · Venture Studio
+  data-centre.html               · Compute Lab (Canadian AI infrastructure)
+training.html                    Training catalogue
+ai-readiness.html                AI Readiness Review
+for-smes.html                    AI for SMEs & employers
 alebex-ai.html                   ALEBEX AI flagship
-innovation-night.html            Innovation Nights blog feed
+canada-ai-strategy.html          Canada's AI strategy & funding
+results.html                     Case studies & results
+innovation-night.html            Innovation Nights feed
+news.html                        News & insights
+team.html                        About AIC / team
+partners.html                    Partners & ecosystem
+faq.html                         FAQ
 contact.html                     Routed contact / inquiry form
-applied-research.html            Core area detail
-ai-workforce-sme-adoption.html   Core area detail
-incubation.html                  Core area detail
-data-centre.html                 Core area detail (Canadian AI infrastructure)
-faq.html / training.html         Redirect stubs
+privacy.html                     Privacy policy
+programs.html                    Services index
 
-events/                          Blog / event posts
+events/                          Blog / event posts (shared nav via ../assets/js/nav.js)
   2026-04-30-ai-innovation-night-launch.html
-  ces-2026-the-future-is-here.html
-  ces-2026-six-trends.html
+  ces-2026-the-future-is-here.html · ces-2026-six-trends.html
   template.html                  Reusable post template
-  April_30_2026/                 Event photos
-  ces-2026/                      CES 2026 post images
+  April_30_2026/ · ces-2026/     Post images
 
-assets/                          All shared assets
-  *.css                          colors_and_type, site (home), page (detail pages)
-  *.js                           scroll (video scrub), nav (mobile menu), lightbox, alebex-orb (Three.js)
-  aic-background.mp4             Scroll-driven background video
-  *.png / *.jpg / *.webp         Imagery
-  events/                        Event poster assets
+assets/
+  css/      colors_and_type · page (detail pages) · site (home)
+  js/       nav · scroll (video scrub) · alebex-orb (Three.js) · rail · lightbox
+  img/      all imagery + iso/ (process maps) · team/ · events/
+  video/    aic-background.mp4 (scroll-driven hero video)
+
+docs/                            Content-strategy reference (not part of the live site)
 ```
+
+> `archive/` (legacy pages from a prior nav structure) is kept on disk for reference
+> but git-ignored, so it is never shipped.
 
 ## Notes
 

@@ -2,7 +2,7 @@
 <!-- ===========================================================================
      Innovation Nights, event/recap post template.
      To add a post: copy this file to /events/YYYY-MM-DD-slug.html, fill in the
-     [PLACEHOLDERS], drop a cover image in /assets/events/, then add a matching
+     [PLACEHOLDERS], drop a cover image in /assets/img/events/, then add a matching
      card to the grid in /innovation-night.html.
      Note: this page lives in /events/, so all asset paths use ../
      =========================================================================== -->
@@ -12,20 +12,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>[POST TITLE] | Innovation Nights, Alexander Innovation Centre</title>
 <meta name="description" content="[ONE-LINE SUMMARY OF THE EVENT / RECAP]" />
-<link rel="stylesheet" href="../assets/colors_and_type.css" />
-<link rel="stylesheet" href="../assets/page.css" />
+<link rel="stylesheet" href="../assets/css/colors_and_type.css?v=20260615v" />
+<link rel="stylesheet" href="../assets/css/page.css?v=20260615v" />
 </head>
 <body style="--accent:#FF8A3D; --accent-soft:rgba(255,138,61,0.16);">
 
 <header class="pnav">
-  <a class="pnav__brand" href="../index.html" aria-label="AIC home"><img src="../assets/aic-logo-white.png" alt="Alexander Innovation Centre" /></a>
-  <nav class="pnav__tabs" aria-label="Primary">
-    <a href="../divisions.html">Core Areas</a>
-    <a href="../programs.html">Services</a>
-    <a href="../alebex-ai.html">ALEBEX AI</a>
-    <a href="../innovation-night.html" class="is-active" aria-current="page">Innovation Nights</a>
-  </nav>
-  <a class="btn btn--solid" href="../contact.html" style="padding:.5rem 1.1rem">Contact</a>
+  <a class="pnav__brand" href="../index.html" aria-label="AIC home"><img src="../assets/img/aic-logo-white.png" alt="Alexander Innovation Centre" / width="1397" height="655"></a>
+  <nav class="pnav__tabs" aria-label="Primary"><div class="mm"></div></nav>
+  <a class="btn btn--solid" href="../ai-readiness.html" style="padding:.5rem 1.1rem">Free AI Review</a>
 </header>
 
 <main>
@@ -35,7 +30,7 @@
     <h1 style="font-size:var(--size-display-md); line-height:1.08;">[POST TITLE]</h1>
 
     <figure style="margin:1.8rem 0;">
-      <img src="../assets/events/[COVER-IMAGE].jpg" alt="[ALT TEXT]"
+      <img src="../assets/img/events/[COVER-IMAGE].jpg" alt="[ALT TEXT]"
            style="width:100%;border-radius:var(--radius-lg);border:1px solid var(--border-1);" />
     </figure>
 
@@ -60,12 +55,12 @@
 
 <footer class="footer">
   <div class="wrap footer__inner">
-    <img class="footer__logo" src="../assets/aic-logo-white.png" alt="Alexander Innovation Centre" />
+    <img class="footer__logo" src="../assets/img/aic-logo-white.png" alt="Alexander Innovation Centre" / width="1397" height="655">
     <p class="footer__tag">Innovation. Education. Industry. Impact.</p>
     <p class="footer__meta">Alexander Innovation Centre · #101 - 570 Dunsmuir Street, Vancouver, BC V6B 1Y1 · <a href="https://alexic.ca">alexic.ca</a> · hello@alexic.ca</p>
   </div>
 </footer>
 
-<script src="../assets/nav.js"></script>
+<script src="../assets/js/nav.js?v=20260615v"></script>
 </body>
 </html>

@@ -1,0 +1,482 @@
+/* ==========================================================================
+   Alexander Innovation Centre — Colors & Type
+   Source of truth for all design tokens. Used across ui_kits/, slides/,
+   and preview/ cards. Derived from alexic.ca, the AIC logo, and the
+   brand imagery supplied by the team.
+   ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+:root {
+  /* -- BRAND COLORS --------------------------------------------------------
+     The logo lives on a deep navy field. Headlines on alexic.ca mix a crisp
+     white with a single accent-blue highlight ("innovations"). The orbit
+     artwork introduces a red/amber glow as a secondary accent used sparingly
+     for emphasis, energy, and "live" moments (events, data readouts).       */
+
+  --aic-navy-900:        #0A1A3A;   /* deepest background, hero wells */
+  --aic-navy-800:        #0F2450;   /* logo field, primary bg */
+  --aic-navy-700:        #13305F;   /* elevated surfaces, cards on dark */
+  --aic-navy-600:        #1B3C75;   /* hover for dark surfaces */
+  --aic-navy-500:        #27508E;   /* borders on dark */
+  --aic-navy-300:        #6C89B8;   /* muted text on dark */
+  --aic-navy-100:        #D9E2F3;   /* very soft tints for light mode */
+
+  --aic-blue-500:        #1FA6FF;   /* primary accent ("innovations") */
+  --aic-blue-400:        #4FBDFF;   /* hover/lighter accent */
+  --aic-blue-300:        #87D2FF;   /* highlights on data viz */
+  --aic-blue-600:        #0B7DD1;   /* pressed / strong link */
+
+  --aic-ember-500:       #E63946;   /* secondary accent — energy, live */
+  --aic-ember-400:       #FF5A66;   /* hover for ember */
+  --aic-ember-600:       #B5222D;   /* pressed ember */
+
+  /* -- NEUTRAL SCALE (light surfaces) ------------------------------------- */
+  --aic-white:           #FFFFFF;
+  --aic-paper:           #F7F9FC;   /* light page bg */
+  --aic-fog-100:         #EDF1F7;
+  --aic-fog-200:         #DCE3EE;
+  --aic-fog-300:         #BFCADC;
+  --aic-slate-500:       #5A6A82;
+  --aic-slate-700:       #2E3A52;
+  --aic-ink:             #0E1626;   /* body text on light */
+
+  /* -- SEMANTIC TOKENS ----------------------------------------------------
+     Two surface modes: dark (hero/marketing default, matches alexic.ca) and
+     light (long-form content, docs, app shells). Components should reference
+     these, not the raw palette.                                              */
+
+  /* default = DARK (matches public site hero) */
+  --fg-1:                var(--aic-white);
+  --fg-2:                #C7D2E8;        /* secondary text on navy */
+  --fg-3:                var(--aic-navy-300);
+  --fg-accent:           var(--aic-blue-500);
+  --fg-ember:            var(--aic-ember-500);
+
+  --bg-1:                var(--aic-navy-800);
+  --bg-2:                var(--aic-navy-700);
+  --bg-3:                var(--aic-navy-600);
+  --bg-well:             var(--aic-navy-900);
+
+  --border-1:            rgba(255,255,255,0.10);
+  --border-2:            rgba(255,255,255,0.18);
+  --border-strong:       var(--aic-blue-500);
+
+  --link:                var(--aic-blue-400);
+  --link-hover:          var(--aic-blue-300);
+
+  --success:             #2FB47C;
+  --warning:             #F4B740;
+  --danger:              var(--aic-ember-500);
+  --info:                var(--aic-blue-500);
+
+  /* -- TYPOGRAPHY ----------------------------------------------------------
+     Sora is the closest free match to the confident, geometric sans used on
+     alexic.ca for headlines (SUBSTITUTION — original likely a paid family
+     such as Satoshi/General Sans; flag for the brand team).
+     Inter for running body copy, JetBrains Mono for data/code.             */
+
+  --font-display:        "Sora", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body:           "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono:           "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* Type scale — tuned for a landing-page-first system.
+     Display sizes use tight tracking & heavy weight; body stays relaxed.     */
+  --size-display-xl:     clamp(2.15rem, 6vw, 5.5rem);   /* hero H1 — fluid, fits phones */
+  --size-display-lg:     clamp(1.9rem, 4.5vw, 4rem);    /* section intro */
+  --size-display-md:     clamp(1.55rem, 3vw, 2.75rem);  /* card titles */
+  --size-h1:             clamp(1.7rem, 4.6vw, 2.25rem);
+  --size-h2:             clamp(1.35rem, 3.6vw, 1.75rem);
+  --size-h3:             1.375rem;
+  --size-h4:             1.125rem;
+  --size-body-lg:        1.125rem;
+  --size-body:           1rem;
+  --size-body-sm:        0.9375rem;
+  --size-caption:        0.8125rem;
+  --size-overline:       0.75rem;
+
+  --weight-regular:      400;
+  --weight-medium:       500;
+  --weight-semibold:     600;
+  --weight-bold:         700;
+  --weight-black:        800;
+
+  --lh-tight:            1.05;
+  --lh-snug:             1.2;
+  --lh-normal:           1.5;
+  --lh-loose:            1.7;
+
+  --track-tight:         -0.02em;   /* for display sizes */
+  --track-snug:          -0.01em;
+  --track-normal:        0;
+  --track-wide:          0.08em;    /* overlines, section kickers */
+
+  /* -- SPACING, RADII, SHADOW --------------------------------------------- */
+  --space-1:             4px;
+  --space-2:             8px;
+  --space-3:             12px;
+  --space-4:             16px;
+  --space-5:             24px;
+  --space-6:             32px;
+  --space-7:             48px;
+  --space-8:             64px;
+  --space-9:             96px;
+  --space-10:            128px;
+
+  --radius-sm:           6px;
+  --radius-md:           10px;
+  --radius-lg:           16px;
+  --radius-xl:           24px;
+  --radius-pill:         999px;
+
+  /* Shadows are used SPARINGLY on dark surfaces — prefer borders + subtle
+     inner highlights. Light-mode uses soft layered ambient shadows.          */
+  --shadow-sm:           0 1px 2px rgba(10,26,58,0.08);
+  --shadow-md:           0 4px 16px rgba(10,26,58,0.10), 0 1px 2px rgba(10,26,58,0.06);
+  --shadow-lg:           0 18px 48px rgba(10,26,58,0.18), 0 4px 10px rgba(10,26,58,0.08);
+  --shadow-glow-blue:    0 0 0 1px rgba(31,166,255,0.5), 0 0 24px rgba(31,166,255,0.35);
+  --shadow-glow-ember:   0 0 0 1px rgba(230,57,70,0.5), 0 0 24px rgba(230,57,70,0.30);
+  --inset-highlight:     inset 0 1px 0 rgba(255,255,255,0.06);
+
+  /* -- MOTION ------------------------------------------------------------- */
+  --ease-standard:       cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-out:            cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:             cubic-bezier(0.4, 0, 1, 1);
+  --dur-fast:            120ms;
+  --dur-base:            200ms;
+  --dur-slow:            400ms;
+}
+
+/* =============================== LIGHT MODE =============================== */
+[data-theme="light"] {
+  --fg-1:                var(--aic-ink);
+  --fg-2:                var(--aic-slate-700);
+  --fg-3:                var(--aic-slate-500);
+  --fg-accent:           var(--aic-blue-600);
+  --fg-ember:            var(--aic-ember-500);
+
+  --bg-1:                var(--aic-paper);
+  --bg-2:                var(--aic-white);
+  --bg-3:                var(--aic-fog-100);
+  --bg-well:             var(--aic-fog-200);
+
+  --border-1:            var(--aic-fog-200);
+  --border-2:            var(--aic-fog-300);
+  --border-strong:       var(--aic-navy-800);
+
+  --link:                var(--aic-blue-600);
+  --link-hover:          var(--aic-navy-800);
+}
+
+/* =============================== BASE TYPE ================================ */
+html { font-family: var(--font-body); color: var(--fg-1); background: var(--bg-1); }
+body { font-size: var(--size-body); line-height: var(--lh-normal); -webkit-font-smoothing: antialiased; }
+
+h1, h2, h3, h4, h5, h6, .display {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--track-snug);
+  color: var(--fg-1);
+  margin: 0;
+}
+
+.display-xl { font-size: var(--size-display-xl); font-weight: var(--weight-black); line-height: var(--lh-tight); letter-spacing: var(--track-tight); }
+.display-lg { font-size: var(--size-display-lg); font-weight: var(--weight-bold);  line-height: var(--lh-tight); letter-spacing: var(--track-tight); }
+.display-md { font-size: var(--size-display-md); font-weight: var(--weight-bold);  line-height: var(--lh-snug);  letter-spacing: var(--track-snug); }
+
+h1 { font-size: var(--size-h1); }
+h2 { font-size: var(--size-h2); }
+h3 { font-size: var(--size-h3); }
+h4 { font-size: var(--size-h4); font-weight: var(--weight-semibold); }
+
+p, .body { font-size: var(--size-body); line-height: var(--lh-normal); color: var(--fg-2); margin: 0; }
+.body-lg  { font-size: var(--size-body-lg); line-height: var(--lh-loose); }
+.body-sm  { font-size: var(--size-body-sm); }
+.caption  { font-size: var(--size-caption); color: var(--fg-3); }
+
+.overline,
+.kicker {
+  font-size: var(--size-overline);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--track-wide);
+  text-transform: uppercase;
+  color: var(--fg-accent);
+}
+
+code, pre, .mono {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+a { color: var(--link); text-decoration: none; transition: color var(--dur-base) var(--ease-standard); }
+a:hover { color: var(--link-hover); }
+
+/* Accent highlight — the alexic.ca treatment where a single word in a
+   headline is painted in accent-blue. Apply as <span class="accent">…</span> */
+.accent       { color: var(--fg-accent); }
+.accent-ember { color: var(--fg-ember); }
+
+/* ============================================================================
+   MEGA-MENU NAV (shared by the dark homepage .nav and light subpage .pnav)
+   Clean top-level titles; details live in hover dropdowns. Mobile shows the
+   seven titles only (tap → cluster page); sub-links stay in the DOM for SEO.
+   ============================================================================ */
+/* Selectors are scoped under .nav__links / .pnav__tabs so they outrank the
+   legacy `.nav__links a` / `.pnav__tabs a` rules in site.css / page.css. */
+.nav__links .mm, .pnav__tabs .mm { display: flex; align-items: center; gap: clamp(0.5rem, 1.5vw, 1.4rem); flex-wrap: wrap; }
+.nav__links .mm__item, .pnav__tabs .mm__item { position: relative; }
+.nav__links .mm__top, .pnav__tabs .mm__top {
+  display: inline-flex; align-items: center; gap: 0.28rem;
+  font-family: var(--font-body); font-size: var(--size-body-sm); font-weight: 500;
+  letter-spacing: -0.01em; color: rgba(255,255,255,0.84);
+  padding: 6px 0; white-space: nowrap; cursor: pointer; text-shadow: 0 1px 8px rgba(4,12,30,0.55);
+  transition: color 180ms ease;
+}
+.nav__links .mm__top::after, .pnav__tabs .mm__top::after {
+  content: "\25BE"; position: static; width: auto; height: auto; background: none;
+  font-size: 0.62em; opacity: 0.55; transform: translateY(1px); transition: none;
+}
+.nav__links .mm__item:hover .mm__top, .pnav__tabs .mm__item:hover .mm__top,
+.nav__links .mm__item:focus-within .mm__top, .pnav__tabs .mm__item:focus-within .mm__top,
+.nav__links .mm__top.is-active, .pnav__tabs .mm__top.is-active { color: #fff; }
+.nav__links .mm__top.is-active::before, .pnav__tabs .mm__top.is-active::before {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -3px; top: auto; height: 2px; width: auto;
+  background: var(--aic-blue-500, #22B8FF); border-radius: 2px;
+}
+.nav__links .mm__panel, .pnav__tabs .mm__panel {
+  position: absolute; top: 100%; left: 0; min-width: 248px;
+  display: flex; flex-direction: column; gap: 1px;
+  margin-top: 8px; padding: 0.55rem;
+  background: rgba(7,22,46,0.97);
+  border: 1px solid rgba(143,217,255,0.18); border-radius: 14px;
+  backdrop-filter: blur(16px) saturate(1.2);
+  box-shadow: 0 26px 60px rgba(2,8,20,0.55), inset 0 1px 0 rgba(255,255,255,0.06);
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transform: translateY(6px); transition: opacity 180ms ease, transform 180ms ease; z-index: 95;
+}
+.nav__links .mm__panel::before, .pnav__tabs .mm__panel::before {
+  content: ""; position: absolute; top: -18px; left: -6px; right: -6px; bottom: auto; width: auto; height: 22px; background: none;
+}
+.nav__links .mm__item:hover .mm__panel, .pnav__tabs .mm__item:hover .mm__panel,
+.nav__links .mm__item:focus-within .mm__panel, .pnav__tabs .mm__item:focus-within .mm__panel {
+  opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0);
+}
+.nav__links .mm__panel a, .pnav__tabs .mm__panel a {
+  display: block; padding: 0.5rem 0.7rem; border-radius: 9px;
+  color: rgba(231,242,255,0.82); font-size: var(--size-body-sm); white-space: nowrap;
+  text-shadow: none; transition: background 150ms ease, color 150ms ease;
+}
+.nav__links .mm__panel a::after, .pnav__tabs .mm__panel a::after { content: none; display: none; }
+.nav__links .mm__panel a:hover, .pnav__tabs .mm__panel a:hover { background: rgba(34,184,255,0.14); color: #fff; width: auto; }
+.nav__links .mm__item:nth-last-child(-n+2) .mm__panel,
+.pnav__tabs .mm__item:nth-last-child(-n+2) .mm__panel { left: auto; right: 0; }
+
+@media (max-width: 1100px) {
+  .nav__links .mm, .pnav__tabs .mm { flex-direction: column; align-items: stretch; gap: 0; width: 100%; }
+  .nav__links .mm__item, .pnav__tabs .mm__item { width: 100%; }
+  .nav__links .mm__top, .pnav__tabs .mm__top {
+    width: 100%; padding: 0.9rem 0; font-size: 1.05rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .nav__links .mm__top::after, .pnav__tabs .mm__top::after { display: none; }
+  .nav__links .mm__top.is-active::before, .pnav__tabs .mm__top.is-active::before { display: none; }
+  .nav__links .mm__panel, .pnav__tabs .mm__panel { display: none !important; }
+}
+
+/* ============================================================================
+   MEGA-MENU — premium polish (overrides above; same scoped specificity, later)
+   ============================================================================ */
+.nav__links .mm__top, .pnav__tabs .mm__top { transition: color 200ms var(--ease-out, cubic-bezier(0.16,1,0.3,1)); }
+.nav__links .mm__top::after, .pnav__tabs .mm__top::after {
+  transition: transform 280ms cubic-bezier(0.16,1,0.3,1), opacity 200ms ease;
+}
+.nav__links .mm__item:hover .mm__top::after, .pnav__tabs .mm__item:hover .mm__top::after,
+.nav__links .mm__item:focus-within .mm__top::after, .pnav__tabs .mm__item:focus-within .mm__top::after {
+  transform: translateY(1px) rotate(180deg); opacity: 0.95;
+}
+
+/* panel: refined glass card + spring entrance */
+.nav__links .mm__panel, .pnav__tabs .mm__panel {
+  min-width: 264px; padding: 0.5rem;
+  margin-top: 8px;
+  background: linear-gradient(180deg, rgba(10,28,56,0.98), rgba(6,18,40,0.98));
+  border: 1px solid rgba(143,217,255,0.14); border-radius: 16px;
+  box-shadow:
+    0 32px 70px rgba(2,8,20,0.62),
+    0 4px 14px rgba(2,8,20,0.40),
+    inset 0 1px 0 rgba(255,255,255,0.07);
+  transform: translateY(12px) scale(0.97); transform-origin: top left;
+  transition: opacity 320ms cubic-bezier(0.16,1,0.3,1),
+              transform 320ms cubic-bezier(0.16,1,0.3,1),
+              visibility 320ms;
+}
+.nav__links .mm__item:hover .mm__panel, .pnav__tabs .mm__item:hover .mm__panel,
+.nav__links .mm__item:focus-within .mm__panel, .pnav__tabs .mm__item:focus-within .mm__panel {
+  transform: translateY(0) scale(1);
+}
+/* gradient hairline accent at the top of each panel */
+/* (removed top hairline — it overlapped the first dropdown item like a strikethrough) */
+
+/* link rows: stagger-in, accent hover, trailing arrow */
+.nav__links .mm__panel a, .pnav__tabs .mm__panel a {
+  position: relative; padding: 0.55rem 1.9rem 0.55rem 0.85rem; border-radius: 10px;
+  opacity: 0; transform: translateY(8px);
+  transition: opacity 300ms cubic-bezier(0.16,1,0.3,1),
+              transform 300ms cubic-bezier(0.16,1,0.3,1),
+              background 180ms ease, color 180ms ease, padding-left 180ms ease;
+}
+.nav__links .mm__item:hover .mm__panel a, .pnav__tabs .mm__item:hover .mm__panel a,
+.nav__links .mm__item:focus-within .mm__panel a, .pnav__tabs .mm__item:focus-within .mm__panel a {
+  opacity: 1; transform: translateY(0);
+}
+.nav__links .mm__panel a:nth-child(2), .pnav__tabs .mm__panel a:nth-child(2) { transition-delay: 30ms, 30ms, 0s, 0s, 0s; }
+.nav__links .mm__panel a:nth-child(3), .pnav__tabs .mm__panel a:nth-child(3) { transition-delay: 60ms, 60ms, 0s, 0s, 0s; }
+.nav__links .mm__panel a:nth-child(4), .pnav__tabs .mm__panel a:nth-child(4) { transition-delay: 90ms, 90ms, 0s, 0s, 0s; }
+.nav__links .mm__panel a:nth-child(5), .pnav__tabs .mm__panel a:nth-child(5) { transition-delay: 120ms, 120ms, 0s, 0s, 0s; }
+.nav__links .mm__panel a::after, .pnav__tabs .mm__panel a::after {
+  content: "\2192"; display: inline; position: absolute; right: 0.75rem; top: 50%;
+  transform: translateY(-50%) translateX(-5px); opacity: 0;
+  color: var(--aic-blue-300, #8FD9FF); font-size: 0.95em;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+.nav__links .mm__panel a:hover, .pnav__tabs .mm__panel a:hover {
+  background: linear-gradient(90deg, rgba(34,184,255,0.18), rgba(34,184,255,0.03));
+  color: #fff; padding-left: 1.05rem;
+}
+.nav__links .mm__panel a:hover::after, .pnav__tabs .mm__panel a:hover::after {
+  opacity: 1; transform: translateY(-50%) translateX(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav__links .mm__panel, .pnav__tabs .mm__panel,
+  .nav__links .mm__panel a, .pnav__tabs .mm__panel a,
+  .nav__links .mm__top::after, .pnav__tabs .mm__top::after { transition: none; }
+  .nav__links .mm__panel a, .pnav__tabs .mm__panel a { opacity: 1; transform: none; }
+}
+@media (max-width: 1100px) {
+  .nav__links .mm__panel a, .pnav__tabs .mm__panel a { opacity: 1; transform: none; }
+}
+
+/* mega-menu: fit all seven titles on one line (desktop) */
+.nav__links .mm, .pnav__tabs .mm { gap: clamp(0.4rem, 0.8vw, 0.9rem); flex-wrap: nowrap; }
+.nav__links .mm__top, .pnav__tabs .mm__top { font-size: 0.875rem; }
+@media (max-width: 1100px) {
+  .nav__links .mm, .pnav__tabs .mm { flex-wrap: wrap; }
+  .nav__links .mm__top, .pnav__tabs .mm__top { font-size: 1.05rem; }
+}
+
+/* ============================================================================
+   MEGA-MENU — JS hover-intent open state (desktop) + mobile accordion
+   nav.js toggles .is-open (with a close delay) so the panel stays reachable.
+   ============================================================================ */
+.nav__links .mm__item.is-open .mm__panel, .pnav__tabs .mm__item.is-open .mm__panel {
+  opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0) scale(1);
+}
+.nav__links .mm__item.is-open .mm__panel a, .pnav__tabs .mm__item.is-open .mm__panel a {
+  opacity: 1; transform: translateY(0);
+}
+.nav__links .mm__item.is-open .mm__panel a:nth-child(2), .pnav__tabs .mm__item.is-open .mm__panel a:nth-child(2) { transition-delay: 30ms; }
+.nav__links .mm__item.is-open .mm__panel a:nth-child(3), .pnav__tabs .mm__item.is-open .mm__panel a:nth-child(3) { transition-delay: 60ms; }
+.nav__links .mm__item.is-open .mm__panel a:nth-child(4), .pnav__tabs .mm__item.is-open .mm__panel a:nth-child(4) { transition-delay: 90ms; }
+.nav__links .mm__item.is-open .mm__panel a:nth-child(5), .pnav__tabs .mm__item.is-open .mm__panel a:nth-child(5) { transition-delay: 120ms; }
+.nav__links .mm__item.is-open .mm__top, .pnav__tabs .mm__item.is-open .mm__top { color: #fff; }
+.nav__links .mm__item.is-open .mm__top::after, .pnav__tabs .mm__item.is-open .mm__top::after {
+  transform: translateY(1px) rotate(180deg); opacity: 0.95;
+}
+
+@media (max-width: 1100px) {
+  .nav__links .mm__item.is-mobile-open .mm__panel, .pnav__tabs .mm__item.is-mobile-open .mm__panel {
+    display: flex !important; position: static; opacity: 1; visibility: visible; pointer-events: auto;
+    transform: none; min-width: 0; margin: 0.15rem 0 0.5rem; padding: 0.3rem 0 0.3rem 0.6rem;
+    background: rgba(255,255,255,0.04); border: 0; box-shadow: none; backdrop-filter: none;
+  }
+  .nav__links .mm__item.is-mobile-open .mm__panel::after, .pnav__tabs .mm__item.is-mobile-open .mm__panel::after { display: none; }
+  .nav__links .mm__item.is-mobile-open .mm__panel a, .pnav__tabs .mm__item.is-mobile-open .mm__panel a {
+    opacity: 1; transform: none; padding: 0.5rem 0.6rem;
+  }
+}
+
+/* solo top-level links (ALEBEX AI, Contact) — no dropdown caret */
+.nav__links .mm__top--solo::after, .pnav__tabs .mm__top--solo::after { display: none; }
+
+/* FIX: kill legacy nav underline (.nav__links a::after / .pnav__tabs a::after,
+   width:100% on hover) bleeding into dropdown links as a strikethrough line. */
+.nav__links .mm__top::after, .pnav__tabs .mm__top::after {
+  left: auto; right: auto; bottom: auto; width: auto; height: auto; background: none;
+}
+.nav__links .mm__panel a::after, .pnav__tabs .mm__panel a::after {
+  content: "\2192"; position: absolute; left: auto; right: 0.75rem; top: 50%; bottom: auto;
+  width: auto; height: auto; background: none; color: var(--aic-blue-300); font-size: 0.95em;
+  opacity: 0; transform: translateY(-50%) translateX(-5px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+.nav__links .mm__panel a:hover::after, .pnav__tabs .mm__panel a:hover::after {
+  width: auto; opacity: 1; transform: translateY(-50%) translateX(0);
+}
+
+/* ===================== Visit Us / Innovation Hub map ===================== */
+.visit { position: relative; z-index: 1; padding: clamp(3rem, 8vh, 6rem) 0; }
+.visit__head { text-align: center; max-width: 640px; margin: 0 auto clamp(1.8rem, 4vh, 2.6rem); }
+.visit__eyebrow {
+  font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.14em;
+  font-size: 0.72rem; color: #1E8FE8; margin: 0 0 0.6rem;
+}
+.visit__head h2 {
+  font-family: var(--font-display); font-weight: 800; color: #10233a;
+  font-size: clamp(1.7rem, 3.4vw, 2.4rem); line-height: 1.08; margin: 0 0 0.5rem;
+}
+.visit__sub { color: #5a6b7c; margin: 0; font-size: 1.02rem; }
+.visit--onDark .visit__head h2 { color: #fff; }
+.visit--onDark .visit__sub { color: rgba(255,255,255,0.72); }
+
+.visit__inner {
+  display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 0;
+  background: #fff; border-radius: 20px; overflow: hidden;
+  border: 1px solid rgba(16,35,58,0.08);
+  box-shadow: 0 30px 70px rgba(8,18,38,0.22);
+}
+.visit__map { position: relative; min-height: 380px; background: #e9eef3; }
+.visit__map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
+.visit__info { padding: clamp(1.8rem, 3vw, 2.8rem); color: #1a2b3c; }
+.visit__info h3 {
+  font-family: var(--font-display); font-weight: 800; color: #10233a;
+  font-size: 1.5rem; margin: 0 0 0.5rem;
+}
+.visit__addr { color: #42556B; line-height: 1.55; margin: 0 0 1.5rem; }
+.visit__gh {
+  font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.1em;
+  font-size: 0.72rem; color: #1E8FE8; margin: 0 0 0.7rem;
+}
+.visit__transit { list-style: none; padding: 0; margin: 0 0 1.8rem; display: grid; gap: 0.6rem; }
+.visit__transit li { color: #42556B; font-size: 0.95rem; line-height: 1.4; }
+.visit__transit span { display: inline-block; min-width: 76px; font-weight: 700; color: #10233a; }
+@media (max-width: 760px) {
+  .visit__inner { grid-template-columns: 1fr; }
+  .visit__map { min-height: 280px; }
+}
+
+/* ===================== Global interaction polish ===================== */
+:where(a, button, .btn, summary, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid #38B6FF;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+:focus:not(:focus-visible) { outline: none; }
+::selection { background: rgba(56,182,255,0.88); color: #04121f; }
+::-moz-selection { background: rgba(56,182,255,0.88); color: #04121f; }
+/* tasteful default for interactive cards/links that lack their own transition */
+.pcard, .door, .feedpost, .dashCard, .tcard { transition: transform 240ms cubic-bezier(0.16,1,0.3,1), box-shadow 240ms ease, border-color 240ms ease; }
+
+/* Mobile: prevent any stray horizontal overflow across all pages */
+@media (max-width: 760px) { html, body { overflow-x: clip; max-width: 100%; } }
+
+/* ===================== Skip to content (a11y) ===================== */
+.skip-link {
+  position: fixed; left: 12px; top: -60px; z-index: 200;
+  background: var(--aic-navy-800, #0F2450); color: #fff;
+  padding: 0.7rem 1.15rem; border-radius: 10px;
+  font-family: var(--font-display); font-weight: 600; font-size: 0.95rem;
+  box-shadow: 0 10px 28px rgba(4,12,28,0.4); transition: top 180ms cubic-bezier(0.16,1,0.3,1);
+}
+.skip-link:focus { top: 12px; outline: 2px solid #38B6FF; outline-offset: 2px; }
