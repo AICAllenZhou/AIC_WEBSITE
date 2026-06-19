@@ -77,7 +77,7 @@ main, .pnav, .footer { position: relative; z-index: 1; }
 }
 .pnav__home:hover { color: var(--aic-blue-500); }
 .navmenu-toggle { display: none; flex-direction: column; gap: 4px; width: 44px; height: 40px; align-items: center; justify-content: center; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); border-radius: 10px; cursor: pointer; margin-left: 0.6rem; }
-.navmenu-toggle span { width: 18px; height: 2px; background: var(--fg-1); border-radius: 2px; transition: transform var(--dur-base), opacity var(--dur-base); }
+.navmenu-toggle span { width: 18px; height: 2px; background: #fff; border-radius: 2px; transition: transform var(--dur-base), opacity var(--dur-base); }
 .pnav.is-open .navmenu-toggle span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
 .pnav.is-open .navmenu-toggle span:nth-child(2) { opacity: 0; }
 .pnav.is-open .navmenu-toggle span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
@@ -158,6 +158,22 @@ main, .pnav, .footer { position: relative; z-index: 1; }
   .mm__item.is-mobile-open .mm__panel { display: grid; }
   .mm__panel a, .mm__panel .mm__link { min-height: 0; }
   .pnav__tabs > a, .pnav__tabs a { width: 100%; padding: 0.9rem 0; border-bottom: 1px solid rgba(255,255,255,0.12); white-space: normal; }
+}
+
+/* mobile menu polish: solid background + plain-text links (no button boxes) */
+@media (max-width: 1100px) {
+  .pnav__tabs { background: #06152e; }                       /* solid, not see-through */
+  .pnav__tabs .mm__panel a, .pnav__tabs .mm__panel .mm__link {
+    background: transparent; border: 0; border-radius: 0;
+    padding: 0.7rem 0 0.7rem 0.9rem; color: rgba(247,251,255,0.82);
+  }
+  .pnav__tabs .mm__panel a::after { display: none; }
+  .pnav__tabs .mm__panel a:hover, .pnav__tabs .mm__panel a:focus,
+  .pnav__tabs .mm__panel .mm__link:hover { background: transparent; color: var(--aic-blue-400); padding-left: 0.9rem; }
+  .pnav__tabs .mm__top:hover, .pnav__tabs .mm__top:focus { color: var(--aic-blue-400); }
+  /* keep links plain — no focus box inside the open menu */
+  .pnav.is-open .mm__top:focus-visible,
+  .pnav.is-open .mm__panel a:focus-visible { outline: none; }
 }
 
 /* ================================= HERO ================================ */
@@ -293,6 +309,8 @@ a.pcard--solid:hover .pcard__cta { color: #fff; }
 .featgrid__ico svg { width: 23px; height: 23px; display: block; }
 .featgrid .t { font-size: var(--size-body-sm); line-height: 1.4; color: var(--fg-1); font-weight: 500; }
 .featgrid--1col { grid-template-columns: 1fr; }   /* single column, e.g. beside a visual in a split layout */
+.featgrid--2col { grid-template-columns: repeat(2, minmax(0, 1fr)); }   /* compact two-up, even in a split column */
+@media (max-width: 480px) { .featgrid--2col { grid-template-columns: 1fr; } }
 /* on division-themed pages the feature tiles + headline highlight follow the
    page accent instead of blue. All scoped to main so the nav/footer never change. */
 body.theme-accent main .featgrid__ico {
@@ -1040,12 +1058,54 @@ body.service-page .footer__meta { color: rgba(247,251,255,0.66); }
 @media (max-width: 640px) { .lightbox__nav { width: 40px; height: 40px; } .lightbox__prev { left: 0.4rem; } .lightbox__next { right: 0.4rem; } .lightbox__img { max-width: 94vw; } }
 
 /* ===================== funding / cost-savings highlight =============== */
-.fundbanner { display: flex; gap: 1rem; align-items: flex-start; padding: 1.1rem 1.4rem; border-radius: var(--radius-lg); background: linear-gradient(100deg, rgba(230,57,70,0.18), rgba(34,184,255,0.14)); border: 1px solid rgba(230,57,70,0.45); }
+.fundbanner { display: flex; gap: 1rem; align-items: flex-start; padding: 1.1rem 1.4rem; border-radius: var(--radius-lg); background: linear-gradient(100deg, rgba(230,57,70,0.16), rgba(34,184,255,0.12)), #fff; border: 1px solid rgba(230,57,70,0.45); box-shadow: 0 10px 26px rgba(7,26,51,0.06); }
 .fundbanner__tag { flex: 0 0 auto; font-family: var(--font-mono); font-size: var(--size-overline); letter-spacing: var(--track-wide); text-transform: uppercase; color: #8A4A12; background: rgba(230,57,70,0.20); border: 1px solid rgba(230,57,70,0.55); padding: 0.34rem 0.7rem; border-radius: var(--radius-pill); }
 .fundbanner p { margin: 0; color: var(--fg-1); font-size: var(--size-body-lg); line-height: var(--lh-normal); }
 .fundbanner strong { color: #B65E14; }
-.fundbanner__fine { display: block; margin-top: 0.4rem; color: var(--fg-3); font-size: var(--size-caption); }
+.fundbanner__fine { display: block; margin-top: 0.4rem; color: #475569; font-size: var(--size-caption); }
 @media (max-width: 560px) { .fundbanner { flex-direction: column; gap: 0.6rem; } }
+
+/* ============ Alebex tech-advantage sections (latency + validation) ===== */
+/* latency comparison bars */
+.latbars { display: grid; gap: 1rem; margin-top: 1.9rem; padding: clamp(1.3rem, 3vw, 2rem); border-radius: var(--radius-xl); border: 1px solid var(--border-1); background: #fff; box-shadow: 0 16px 38px rgba(7,26,51,0.06); }
+.latrow { display: grid; grid-template-columns: clamp(150px, 24%, 230px) 1fr auto; gap: 0.6rem 1rem; align-items: center; }
+.latrow__label { display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-display); font-weight: var(--weight-semibold); font-size: var(--size-body-sm); color: var(--fg-1); }
+.latrow__dot { width: 9px; height: 9px; border-radius: 50%; flex: 0 0 auto; }
+.latrow__dot--good { background: #16A34A; }
+.latrow__dot--bad { background: #E11D2E; }
+.latrow__dot--accent { background: #1488F5; }
+.latrow__track { height: 11px; border-radius: 999px; background: #EDF1F7; overflow: hidden; }
+.latrow__bar { display: block; height: 100%; border-radius: 999px; transform-origin: left; }
+.latrow__bar--good { background: linear-gradient(90deg, #41D688, #16A34A); }
+.latrow__bar--bad { background: linear-gradient(90deg, #FF9A9A, #E11D2E); }
+.latrow__bar--accent { background: linear-gradient(90deg, #4FC6FF, #1488F5); }
+.latrow__val { font-family: var(--font-mono); font-size: var(--size-caption); color: var(--fg-1); white-space: nowrap; }
+.latrow__val em { font-style: normal; color: var(--fg-3); margin-left: 0.3rem; }
+.js-anim .latrow__bar { animation: latGrow 0.9s var(--ease-out) both; }
+@keyframes latGrow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@media (max-width: 640px) { .latrow { grid-template-columns: 1fr; gap: 0.3rem; } .latrow__val { justify-self: start; } }
+.statbig { font-family: var(--font-display); font-weight: var(--weight-black); font-size: clamp(1.8rem, 3.5vw, 2.5rem); line-height: 1; letter-spacing: -0.02em; margin: 0.15rem 0 0.5rem; color: var(--accent); }
+.statbig--good { color: #16A34A; }
+.statbig--bad { color: #E11D2E; }
+
+/* traditional-vs-Alebex comparison cards */
+.vsgrid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 2.5vw, 1.6rem); margin-top: 1.9rem; }
+@media (max-width: 760px) { .vsgrid { grid-template-columns: 1fr; } }
+.vscard { padding: clamp(1.3rem, 3vw, 1.9rem); border-radius: var(--radius-xl); border: 1px solid var(--border-1); background: #fff; box-shadow: 0 16px 38px rgba(7,26,51,0.06); }
+.vscard--bad { border-color: rgba(225,29,46,0.28); background: linear-gradient(180deg, rgba(225,29,46,0.05), #fff 60%); }
+.vscard--good { border-color: rgba(20,136,245,0.32); background: linear-gradient(180deg, rgba(20,136,245,0.06), #fff 60%); }
+.vscard__tag { display: inline-block; font-family: var(--font-mono); font-size: var(--size-overline); letter-spacing: var(--track-wide); text-transform: uppercase; padding: 0.34rem 0.72rem; border-radius: var(--radius-pill); margin-bottom: 0.9rem; }
+.vscard--bad .vscard__tag { color: #B42318; background: rgba(225,29,46,0.1); border: 1px solid rgba(225,29,46,0.3); }
+.vscard--good .vscard__tag { color: #0B6FB9; background: rgba(20,136,245,0.1); border: 1px solid rgba(20,136,245,0.3); }
+.flowsteps { list-style: none; padding: 0; margin: 0 0 0.9rem; display: grid; gap: 0.55rem; }
+.flowsteps li { display: flex; align-items: center; gap: 0.7rem; font-size: var(--size-body-sm); color: var(--fg-1); }
+.flowsteps__n { flex: 0 0 auto; width: 26px; height: 26px; display: grid; place-items: center; border-radius: 50%; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; }
+.vscard--bad .flowsteps__n { color: #B42318; background: rgba(225,29,46,0.12); }
+.vscard--good .flowsteps__n { color: #0B6FB9; background: rgba(20,136,245,0.12); }
+.flowsteps li.is-pass .flowsteps__n { color: #16A34A; background: rgba(22,163,74,0.14); }
+.vscard__note { margin: 0; color: var(--fg-2); font-size: var(--size-caption); line-height: var(--lh-loose); }
+.proofbar { margin-top: 1.5rem; display: flex; align-items: center; justify-content: center; gap: 0.7rem; text-align: center; padding: 1.05rem 1.4rem; border-radius: var(--radius-lg); background: linear-gradient(100deg, #0A4FB0, #1488F5); color: #fff; font-family: var(--font-display); font-weight: var(--weight-semibold); box-shadow: 0 16px 38px rgba(20,136,245,0.3); }
+.proofbar svg { width: 22px; height: 22px; flex: 0 0 auto; }
 
 /* ===================== ALEBEX 3D orb (on the ALEBEX page) ============== */
 .orb3d { position: relative; width: min(320px, 80%); aspect-ratio: 1; display: grid; place-items: center; margin-inline: auto; }
