@@ -14,8 +14,8 @@
 <meta property="og:url" content="https://alexic.ca/contact.html" />
 <meta property="og:image" content="https://alexic.ca/assets/img/video-poster.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
-<link rel="stylesheet" href="assets/css/colors_and_type.css?v=20260619a" />
-<link rel="stylesheet" href="assets/css/page.css?v=20260619a" />
+<link rel="stylesheet" href="assets/css/colors_and_type.css?v=20260619e" />
+<link rel="stylesheet" href="assets/css/page.css?v=20260619e" />
 </head>
 <body style="--accent:#1E8FE8; --accent-soft:rgba(30,143,232,0.14);">
 <div class="bg-fx bg-fx--soft" aria-hidden="true"><span></span><span></span><span></span></div>
@@ -45,9 +45,10 @@
             <div><label>Organization</label><input name="org" autocomplete="organization" /></div>
           </div>
           <div class="row2">
-            <div><label>Email</label><input required type="email" name="email" autocomplete="email" /></div>
+            <div><label>Job title</label><input name="jobtitle" autocomplete="organization-title" /></div>
             <div><label>Phone (optional)</label><input name="phone" autocomplete="tel" /></div>
           </div>
+          <div><label>Email</label><input required type="email" name="email" autocomplete="email" /></div>
           <div class="row2">
             <div><label>Inquiry type</label>
               <select name="inquiry">
@@ -101,51 +102,8 @@
 </main>
 
 <div id="site-footer"></div>
-<script>
-(function () {
-  var t = new URLSearchParams(location.search).get("type");
-  if (!t) return;
-  var map = { "ai-readiness":"readiness", "training":"training", "workflow":"readiness",
-    "governance":"readiness", "alebex-demo":"Alebex", "research":"research",
-    "venture-studio":"Incubation", "innovation-night":"Innovation", "infrastructure":"infrastructure" };
-  var kw = (map[t] || t).toLowerCase();
-  var sel = document.querySelector("select[name=inquiry]");
-  if (!sel) return;
-  for (var i = 0; i < sel.options.length; i++) {
-    if (sel.options[i].text.toLowerCase().indexOf(kw) > -1) { sel.selectedIndex = i; break; }
-  }
-})();
-
-/* AJAX submit so visitors stay on the page; native POST is the fallback */
-(function () {
-  var form = document.getElementById("contactForm");
-  if (!form || !window.fetch) return;
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    var btn = form.querySelector("button[type=submit]");
-    var ok = form.querySelector(".pform__ok");
-    var err = form.querySelector(".pform__err");
-    ok.hidden = err.hidden = true;
-    btn.disabled = true;
-    fetch("https://formsubmit.co/ajax/hello@alexic.ca", {
-      method: "POST",
-      headers: { "Accept": "application/json" },
-      body: new FormData(form)
-    }).then(function (r) {
-      if (!r.ok) throw new Error(r.status);
-      return r.json();
-    }).then(function () {
-      ok.hidden = false;
-      form.reset();
-      btn.disabled = false;
-    }).catch(function () {
-      err.hidden = false;
-      btn.disabled = false;
-    });
-  });
-})();
-</script>
-<script src="assets/js/nav.js?v=20260619a"></script>
-<script src="assets/js/footer.js?v=20260619a"></script>
+<script src="assets/js/leads.js?v=20260619e"></script>
+<script src="assets/js/nav.js?v=20260619e"></script>
+<script src="assets/js/footer.js?v=20260619e"></script>
 </body>
 </html>

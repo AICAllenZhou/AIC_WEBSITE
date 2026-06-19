@@ -6,6 +6,7 @@
   var menu = [
     { label: "About AIC", href: "about-aic.html", links: [
       ["About AIC", "about-aic.html"],
+      ["5 Pillars", "five-pillars.html"],
       ["FAQ", "faq.html"]
     ]},
     { label: "Divisions", href: "divisions.html", links: [
@@ -46,7 +47,7 @@
              '<img src="' + url("assets/img/aic-logo-wide-dark-bg.svg") + '" alt="Alexander Innovation Centre" width="2663" height="428">' +
            "</a>" +
            '<nav class="pnav__tabs" aria-label="Primary"><div class="mm"></div></nav>' +
-           '<a class="btn btn--solid" href="' + url("ai-readiness.html") + '" style="padding:.5rem 1.1rem">Free AI Review</a>';
+           '<a class="btn btn--solid" href="' + url("ai-readiness.html") + '" style="padding:.45rem 1rem">Free Enterprise AI<br>Adoption Consultation</a>';
   }
   function injectNavShell() {
     document.querySelectorAll("header.pnav").forEach(function (h) {
