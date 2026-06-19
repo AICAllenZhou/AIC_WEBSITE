@@ -31,6 +31,21 @@
   --aic-ember-400:       #FF5A66;   /* hover for ember */
   --aic-ember-600:       #B5222D;   /* pressed ember */
 
+  /* -- ACCENT SYSTEM (from the AIC slide deck) ---------------------------
+     A five-hue palette used to give each pillar / division / section its own
+     identity. Blue stays primary; these are for per-section accenting. The
+     "-300" tints are the light, on-dark text versions used in the deck.     */
+  --aic-teal-500:        #2DD4C4;   /* infrastructure */
+  --aic-teal-300:        #8CE8DC;
+  --aic-orange-500:      #FF9A3D;   /* research */
+  --aic-orange-300:      #FFC892;
+  --aic-purple-500:      #B28BFF;   /* incubation */
+  --aic-purple-300:      #D9C6FF;
+  --aic-green-500:       #3DD67E;   /* training / education */
+  --aic-green-300:       #9BECBB;
+  --aic-red-500:         #F05A5A;   /* community / innovation nights */
+  --aic-red-300:         #FFB3B3;
+
   /* -- NEUTRAL SCALE (light surfaces) ------------------------------------- */
   --aic-white:           #FFFFFF;
   --aic-paper:           #F7F9FC;   /* light page bg */

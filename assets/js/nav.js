@@ -4,9 +4,8 @@
    Dropdowns list page titles only (no descriptions). Logo = Home. */
 (function () {
   var menu = [
-    { label: "About AIC", href: "team.html", links: [
-      ["About AIC", "team.html"],
-      ["Partners & Ecosystem", "partners.html"],
+    { label: "About AIC", href: "about-aic.html", links: [
+      ["About AIC", "about-aic.html"],
       ["FAQ", "faq.html"]
     ]},
     { label: "Divisions", href: "divisions.html", links: [
@@ -21,10 +20,9 @@
       ["Workforce Academy", "ai-workforce-sme-adoption.html"],
       ["Training Catalogue", "training.html"]
     ]},
-    { label: "ALEBEX AI", href: "alebex-ai.html", links: [] },
+    { label: "Alebex", href: "alebex-ai.html", links: [] },
     { label: "Resources", href: "canada-ai-strategy.html", links: [
       ["Canada's AI Strategy & Funding", "canada-ai-strategy.html"],
-      ["Case Studies & Results", "results.html"],
       ["Innovation Nights", "innovation-night.html"],
       ["News & Insights", "news.html"]
     ]},
@@ -39,6 +37,22 @@
   // pages in a subfolder (e.g. /events/) need links prefixed with ../
   var PRE = /\/events\//.test(window.location.pathname) ? "../" : "";
   function url(h) { return /^https?:\/\//.test(h) ? h : PRE + h; }
+
+  /* Inside-page nav shell (logo + menu container + CTA). Single source of
+     truth — edit here and it updates across every inside page. The homepage
+     keeps its own .nav markup. */
+  function navShellHTML() {
+    return '<a class="pnav__brand" href="' + url("index.html") + '" aria-label="Alexander Innovation Centre home">' +
+             '<img src="' + url("assets/img/aic-logo-wide-dark-bg.svg") + '" alt="Alexander Innovation Centre" width="2663" height="428">' +
+           "</a>" +
+           '<nav class="pnav__tabs" aria-label="Primary"><div class="mm"></div></nav>' +
+           '<a class="btn btn--solid" href="' + url("ai-readiness.html") + '" style="padding:.5rem 1.1rem">Free AI Review</a>';
+  }
+  function injectNavShell() {
+    document.querySelectorAll("header.pnav").forEach(function (h) {
+      if (!h.children.length) h.innerHTML = navShellHTML();
+    });
+  }
 
   function renderMenus() {
     var current = normalizePath(window.location.pathname);
@@ -110,7 +124,8 @@
     if (!("IntersectionObserver" in window)) return;
     var sel = "main .psection > .overline, main .psection > h1, main .psection > h2," +
       " main .psection > .plead, main .pcard, main .feedpost, main .tcard, main .isopanel," +
-      " main .pnote, main .upcoming, main .visit__inner, main .buildTrack, main .pcta > *";
+      " main .pnote, main .upcoming, main .visit__inner, main .buildTrack, main .pcta > *," +
+      " main .seat, main .bcard, main .whyexist__text, main .whyexist__graphic, main .pagebanner";
     var els = Array.prototype.slice.call(document.querySelectorAll(sel));
     if (!els.length) return;
     document.documentElement.classList.add("js-anim");
@@ -133,9 +148,53 @@
     els.forEach(function (el) { io.observe(el); });
   }
 
+  /* smooth-animate <details> accordions on the FAQ (height transition) */
+  function initFaqAccordions() {
+    var list = document.querySelectorAll(".faq details");
+    if (!list.length) return;
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    list.forEach(function (d) {
+      var summary = d.querySelector("summary");
+      if (!summary || d.querySelector(".faq__panel")) return;
+      var panel = document.createElement("div");
+      panel.className = "faq__panel";
+      var n = summary.nextSibling;
+      while (n) { var next = n.nextSibling; panel.appendChild(n); n = next; }
+      d.appendChild(panel);
+      if (reduce) return;                       // keep instant native toggle
+      summary.addEventListener("click", function (e) {
+        e.preventDefault();
+        if (d.dataset.anim) return;
+        d.dataset.anim = "1";
+        function done(te) {
+          if (te.propertyName !== "height") return;
+          panel.style.height = "";
+          delete d.dataset.anim;
+          panel.removeEventListener("transitionend", done);
+        }
+        if (d.open) {
+          panel.style.height = panel.scrollHeight + "px";
+          requestAnimationFrame(function () { panel.style.height = "0px"; });
+          panel.addEventListener("transitionend", function close(te) {
+            if (te.propertyName !== "height") return;
+            d.open = false; panel.style.height = ""; delete d.dataset.anim;
+            panel.removeEventListener("transitionend", close);
+          });
+        } else {
+          d.open = true;
+          panel.style.height = "0px";
+          requestAnimationFrame(function () { panel.style.height = panel.scrollHeight + "px"; });
+          panel.addEventListener("transitionend", done);
+        }
+      });
+    });
+  }
+
   function init() {
   injectSkipLink();
+  injectNavShell();
   renderMenus();
+  initFaqAccordions();
   document.querySelectorAll("header.nav").forEach(function (h) { setup(h, ".nav__links"); });
   document.querySelectorAll("header.pnav").forEach(function (h) { setup(h, ".pnav__tabs"); });
   initReveal();
