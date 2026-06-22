@@ -1755,3 +1755,5 @@ main > article + .pcta--full { margin-top: clamp(2.5rem, 6vw, 4.5rem); }
 .finalcta__actions .btn { justify-content: center; }
 .finalcta__tags { margin-top: clamp(1.4rem, 3vw, 2rem); margin-bottom: 0; }
 .pcta--final .etags { color: rgba(221,233,255,0.55); }
+
+.journey--two { grid-template-columns: repeat(2, 1fr); }

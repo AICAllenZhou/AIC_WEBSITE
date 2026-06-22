@@ -9,19 +9,19 @@
       ["5 Pillars", "five-pillars.html"],
       ["FAQ", "faq.html"]
     ]},
-    { label: "Divisions", href: "divisions.html", links: [
-      ["Divisions Overview", "divisions.html"],
+    { label: "What We Do", href: "divisions.html", links: [
+      ["Overview", "divisions.html"],
       ["Innovation Lab", "applied-research.html"],
       ["Incubation", "incubation.html"],
       ["Compute Lab", "data-centre.html"]
     ]},
-    { label: "AI Adoption", href: "ai-readiness.html", links: [
+    { label: "Business AI Adoption", href: "ai-readiness.html", links: [
       ["AI Readiness Review", "ai-readiness.html"],
       ["For SMEs & Employers", "for-smes.html"],
-      ["Workforce Academy", "ai-workforce-sme-adoption.html"],
-      ["Training Catalogue", "training.html"]
+      ["Funding & Grants", "funding.html"],
+      ["Workforce Training", "ai-workforce-sme-adoption.html"]
     ]},
-    { label: "Alebex", href: "alebex-ai.html", links: [] },
+    { label: "ALEBEX AI", href: "alebex-ai.html", links: [] },
     { label: "Resources", href: "canada-ai-strategy.html", links: [
       ["Canada's AI Strategy & Funding", "canada-ai-strategy.html"],
       ["Innovation Nights", "innovation-night.html"],
