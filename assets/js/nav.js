@@ -44,7 +44,7 @@
      keeps its own .nav markup. */
   function navShellHTML() {
     return '<a class="pnav__brand" href="' + url("index.html") + '" aria-label="Alexander Innovation Centre home">' +
-             '<img src="' + url("assets/img/aic-logo-wide-dark-bg.svg") + '" alt="Alexander Innovation Centre" width="2663" height="428">' +
+             '<img src="' + url("assets/img/aic-logo-wide-white-font.svg") + '" alt="Alexander Innovation Centre" width="2663" height="428">' +
            "</a>" +
            '<nav class="pnav__tabs" aria-label="Primary"><div class="mm"></div></nav>' +
            '<a class="btn btn--solid" href="' + url("ai-readiness.html") + '" style="padding:.45rem 1rem">Free Enterprise AI<br>Adoption Consultation</a>';

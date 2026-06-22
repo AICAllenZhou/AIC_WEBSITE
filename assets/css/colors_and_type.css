@@ -249,8 +249,7 @@ a:hover { color: var(--link-hover); }
   transition: color 180ms ease;
 }
 .nav__links .mm__top::after, .pnav__tabs .mm__top::after {
-  content: "\25BE"; position: static; width: auto; height: auto; background: none;
-  font-size: 0.62em; opacity: 0.55; transform: translateY(1px); transition: none;
+  content: none; display: none;   /* no trailing dropdown caret after nav links */
 }
 .nav__links .mm__item:hover .mm__top, .pnav__tabs .mm__item:hover .mm__top,
 .nav__links .mm__item:focus-within .mm__top, .pnav__tabs .mm__item:focus-within .mm__top,

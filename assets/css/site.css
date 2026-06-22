@@ -151,18 +151,21 @@ img { max-width: 100%; height: auto; display: block; }
 .mm { display: flex; align-items: center; flex-wrap: nowrap; gap: clamp(0.42rem, 0.75vw, 0.75rem); }
 .mm__item { position: relative; }
 .mm__top {
+  position: relative;
   display: inline-flex; align-items: center; gap: 0.35rem;
   min-height: 2.2rem; white-space: nowrap;
 }
+/* hover dot — absolutely centered below the label so it never reserves space or clips */
 .mm__top::before {
-  content: ""; width: 5px; height: 5px; border-radius: 50%;
-  background: var(--aic-blue-500); opacity: 0; transform: scale(0.4);
+  content: ""; position: absolute; left: 50%; bottom: 2px;
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--aic-blue-500); opacity: 0; transform: translateX(-50%) scale(0.4);
   transition: opacity var(--dur-base), transform var(--dur-base);
 }
 .mm__item:hover .mm__top,
 .mm__item:focus-within .mm__top { color: #fff; }
 .mm__item:hover .mm__top::before,
-.mm__item:focus-within .mm__top::before { opacity: 1; transform: scale(1); }
+.mm__item:focus-within .mm__top::before { opacity: 1; transform: translateX(-50%) scale(1); }
 .mm__panel {
   position: absolute; top: calc(100% + 0.85rem); left: 50%;
   width: min(300px, calc(100vw - 2rem)); min-height: 0;
@@ -468,6 +471,20 @@ h2.display-lg, h2.display-md { margin-top: 0.3rem; max-width: 18ch; }
 }
 /* smooth hover — gentle lift + glow (matches the cards below, no swipe) */
 .hero__cta .btn:hover { transform: translateY(-2px); }
+
+/* centered hero text — all white with a wide drop shadow for legibility */
+.hero__wrap { text-align: center; }
+.hero__wrap .hero__eyebrow { align-items: center; color: #fff; }
+.hero__wrap .hero__eyebrow::after { background: rgba(255,255,255,0.85); }
+.hero__wrap .hero__title,
+.hero__wrap .hero__title .accent,
+.hero__wrap .hero__sub { color: #fff; }
+.hero__wrap .hero__title,
+.hero__wrap .hero__sub { margin-left: auto; margin-right: auto; }
+.hero__wrap .hero__eyebrow,
+.hero__wrap .hero__title,
+.hero__wrap .hero__sub { text-shadow: 0 2px 32px rgba(3,10,25,0.78), 0 2px 8px rgba(3,10,25,0.65); }
+.hero__wrap .hero__cta { justify-content: center; }
 
 /* primary resting state — flat blue, gradient reveals on hover (base .btn--primary) */
 .hero__cta .btn--primary {
@@ -779,8 +796,8 @@ h2.display-lg, h2.display-md { margin-top: 0.3rem; max-width: 18ch; }
 /* funding hook under the strip */
 .strip__note {
   margin-top: clamp(1rem, 2.5vw, 1.5rem); padding: 1rem 1.3rem;
-  border-radius: var(--radius-lg); border: 1px solid rgba(20,136,245,0.45);
-  background: linear-gradient(100deg, rgba(20,136,245,0.14), rgba(34,184,255,0.10));
+  border-radius: var(--radius-lg); border: 1px solid rgba(20,136,245,0.55);
+  background: linear-gradient(100deg, rgba(20,136,245,0.32), rgba(34,184,255,0.22)), rgba(10,22,44,0.9);
   color: var(--fg-1); font-size: var(--size-body-sm); line-height: var(--lh-loose);
 }
 .strip__note strong { color: #FF6B72; }
@@ -1210,6 +1227,8 @@ h2.display-lg, h2.display-md { margin-top: 0.3rem; max-width: 18ch; }
 .faq summary::after { content: "+"; color: var(--aic-blue-400); font-size: 1.3em; line-height: 1; flex: 0 0 auto; }
 .faq details[open] summary::after { content: "\2212"; }
 .faq details p { padding: 0 1.2rem 1.1rem; color: var(--fg-2); font-size: var(--size-body-sm); line-height: var(--lh-loose); margin: 0; }
+/* smooth open/close (JS animates the height of this wrapper) */
+.faq__panel { overflow: hidden; transition: height 0.45s var(--ease-out); }
 
 /* homepage event-card poster */
 .eventcard__poster { display: block; margin: 0.7rem 0 0.2rem; }
